@@ -2,17 +2,18 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "let path = '~/some/path/here'
 "call vundle#rc(path)
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'jacoborus/tender'
+Plugin 'haya14busa/incsearch.vim'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -29,17 +30,35 @@ filetype plugin indent on    " required
 " NOTE: comments after Plugin commands are not allowed.
 " Put your stuff after this line
 
+"let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+
+"powerline symbols
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+
+set encoding=utf-8
 set laststatus=2
-""set guifont=Liberation_Mono_for_Powerline:h10
-""set encoding=utf-8
+set guifont=Ubuntu_Mono_derivative_Powerline:h16
 let g:airline_powerline_fonts = 1
-""let g:airline_left_sep = '>'
-""let g:airline_right_sep = '<'
-""let g:airline_section_y = 'BN: %{bufnr("%")}'
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+"g:airline_section_y = 'BN: %{bufnr("%")}'
 let g:airline_theme='powerlineish'
 let g:airline#extensions#whitespace#enabled = 0
 
+
+
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
 set nu
+set incsearch
+set history=100
+filetype on
 "filetype plugin indent on   " Automatically detect file types.
 set mouse=a					" Automatically enable mouse usage
 set mousehide				" Hide the mouse cursor while typing
@@ -53,18 +72,18 @@ highlight clear LineNr          " Current line number row will have same backgro
 highlight clear CursorLineNr    " Remove highlight color from current line number
 
 set nowrap                      " Do not wrap long lines
-set autoindent              " Indent at the same level of the previous line
-set shiftwidth=4            " Use indents of 4 spaces
-"set expandtab               " Tabs are spaces, not tabs
-set tabstop=4               " An indentation every four columns
-set softtabstop=4           " Let backspace delete indent
-set nojoinspaces            " Prevents inserting two spaces after punctuation on a join (J)
-set splitright              " Puts new vsplit windows to the right of the current
-set splitbelow              " Puts new split windows to the bottom of the current"
+set autoindent					" Indent at the same level of the previous line
+set shiftwidth=4				" Use indents of 4 spaces
+"set expandtab					" Tabs are spaces, not tabs
+set tabstop=4					" An indentation every four columns
+set softtabstop=4				" Let backspace delete indent
+set nojoinspaces				" Prevents inserting two spaces after punctuation on a join (J)
+set splitright					" Puts new vsplit windows to the right of the current
+set splitbelow					" Puts new split windows to the bottom of the current"
 
 set smartcase                   " Case sensitive when uc present
-set wildmenu                    " Show list instead of just completing
-set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
+"set wildmenu                    " Show list instead of just completing
+"set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
 set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
 set scrolljump=5                " Lines to scroll when cursor leaves screen
 set scrolloff=3                 " Minimum lines to keep above and below cursor
@@ -75,3 +94,11 @@ hi def link cCustomFunc Function
 
 colorscheme monokai
 
+
+map <F8> :tabn <CR>
+map <F7> :tabp <CR>
+map ZZ :wq <CR>
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
