@@ -114,7 +114,7 @@ if ! shopt -oq posix; then
 fi
 
 
-cd ~/Desktop/Data-Structures/hw4
+cd ~/Desktop/Data-Structures/
 
 #export PATH=~/clang+llvm-3.9.0-x86_64-linux-gnu-ubuntu-14.04/bin/:$PATH
 
@@ -131,3 +131,5 @@ export LD_LIBRARY_PATH
 
 #LD_LIBRARY_PATH=/usr/local/lib64/:$LD_LIBRARY_PATH
 #export LD_LIBRARY_PATH
+
+#export TERM="xterm-256color"
