@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/x220/.fonts'
+let g:netrw_dirhist_2='/home/x220/.vim'
+let g:netrw_dirhist_3='/home/x220/.vim/bundle/YouCompleteMe'
+let g:netrw_dirhist_4='/home/x220/.vim'
+let g:netrw_dirhist_5='/home/x220/Desktop/Data-Structures/SparseMatrix_retry'
+let g:netrw_dirhist_6='/home/x220/Desktop/vim/colors'
+let g:netrw_dirhist_7='/home/x220/Desktop/Data-Structures/SparseMatrix_retry'
+let g:netrw_dirhist_8='/home/x220/Desktop/Data-Structures/hw2'
+let g:netrw_dirhist_9='/home/x220/Desktop/Data-Structures/hw3'

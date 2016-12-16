@@ -136,7 +136,7 @@ export TERM=xterm-256color
 export TERM=screen-256color
 
 #export PS1='\[\033[1;34m\]\d\[\033[00m\]\D{%I:%M %P} :/\W$'
-export PS1='\[\033[1;32m\]<\D{%A %m/%d} \D{%I:%M%P}>\[\033[1;34m\]:/\W\[\033[00m\]$'
+export PS1='\[\033[1;32m\]<\D{%A %m/%d} \D{%I:%M%P}>\[\033[1;34m\]:/\W\[\033[00m\]$ '
 #PS1='[\t] /\W\$'
 
 #set guifont=Consolas\ for\ Powerline:h20
