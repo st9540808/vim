@@ -114,8 +114,6 @@ if ! shopt -oq posix; then
 fi
 
 
-cd ~/Desktop/Data-Structures/
-
 #export PATH=~/clang+llvm-3.9.0-x86_64-linux-gnu-ubuntu-14.04/bin/:$PATH
 
 #C_INCLUDE_PATH=/usr/local/include
@@ -126,8 +124,8 @@ cd ~/Desktop/Data-Structures/
 #export LIBRARY_PATH
 #
 
-LD_LIBRARY_PATH=/usr/lib
-export LD_LIBRARY_PATH
+#LD_LIBRARY_PATH=/usr/lib
+#export LD_LIBRARY_PATH
 
 #LD_LIBRARY_PATH=/usr/local/lib64/:$LD_LIBRARY_PATH
 #export LD_LIBRARY_PATH
@@ -136,7 +134,10 @@ export TERM=xterm-256color
 export TERM=screen-256color
 
 #export PS1='\[\033[1;34m\]\d\[\033[00m\]\D{%I:%M %P} :/\W$'
-export PS1='\[\033[1;32m\]<\D{%A %m/%d} \D{%I:%M%P}>\[\033[1;34m\]:/\W\[\033[00m\]$ '
+export PS1='\n\[\033[1;32m\]<\D{%A %m/%d} \D{%I:%M%P}>\[\033[1;34m\] \w\[\033[00m\]\n$ '
 #PS1='[\t] /\W\$'
 
 #set guifont=Consolas\ for\ Powerline:h20
+cd /cygdrive/c/Users/X220/Desktop/WorkSpace/Data-Structures
+
+export LANG='en_GB.UTF-8'
