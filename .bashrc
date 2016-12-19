@@ -130,14 +130,16 @@ fi
 #LD_LIBRARY_PATH=/usr/local/lib64/:$LD_LIBRARY_PATH
 #export LD_LIBRARY_PATH
 
-export TERM=xterm-256color
-export TERM=screen-256color
+#export TERM=xterm-256color
+#export TERM=screen-256color
 
 #export PS1='\[\033[1;34m\]\d\[\033[00m\]\D{%I:%M %P} :/\W$'
 export PS1='\n\[\033[1;32m\]<\D{%A %m/%d} \D{%I:%M%P}>\[\033[1;34m\] \w\[\033[00m\]\n$ '
 #PS1='[\t] /\W\$'
 
 #set guifont=Consolas\ for\ Powerline:h20
-cd /cygdrive/c/Users/X220/Desktop/WorkSpace/Data-Structures
+cd ~/Desktop/
 
-export LANG='en_GB.UTF-8'
+#export LANG=en_GB.UTF-8
+#export LC_ALL=en_US.UTF-8
+
