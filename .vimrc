@@ -13,7 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'haya14busa/incsearch.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -42,7 +42,7 @@ set laststatus=2
 "set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 22
 "set guifont=Consolas\ for\ Powerline:h20
 "set guifont=Powerline_Consolas:h14:cANSI
-set guifontwide=YaHei_Consolas_Hybrid:h22
+"set guifontwide=YaHei_Consolas_Hybrid:h22
 "set guifont=Consolas:h11
 let g:Powerline_symbols='unicode'
 "let g:airline_powerline_fonts = 1
@@ -61,7 +61,7 @@ let g:airline#extensions#whitespace#enabled = 0
 scriptencoding utf-8
 
 "set guifont=Meslo\ LG\ M\ for\ Powerline:h9 " <~ set the font
-set guifont=Powerline\ Consolas:h11 " <~ set the font
+"set guifont=Powerline\ Consolas:h11 " <~ set the font
 set encoding=utf-8                  " <~ set the encoding
 let g:airline_powerline_fonts=1     " <~ activate the font in airline
 
