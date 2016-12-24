@@ -1,0 +1,11 @@
+--style=allman 
+--indent=tab=4 
+--indent-switches 
+--keep-one-line-blocks
+--unpad-paren 
+--pad-oper 
+--pad-header 
+--suffix=none 
+--align-pointer=name 
+--align-reference=name 
+--remove-brackets
