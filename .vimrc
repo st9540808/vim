@@ -1,70 +1,102 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"let path = '~/some/path/here'
-"call vundle#rc(path)
 
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'haya14busa/incsearch.vim'
 Plugin 'itchyny/lightline.vim'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'haya14busa/incsearch.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
+Plugin 'Yggdroot/indentLine'
+Plugin 'Shougo/neocomplete'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList          - list configured plugins
-" :PluginInstall(!)    - install (update) plugins
-" :PluginSearch(!) foo - search (or refresh cache first) for foo
-" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Plugin commands are not allowed.
-" Put your stuff after this line
 
-"let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 "powerline symbols
-if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
-endif
+"if !exists('g:airline_symbols')
+"	let g:airline_symbols = {}
+"endif
 
 set encoding=utf-8
 set laststatus=2
+""for vim-airline""
 "set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 22
 "set guifont=Consolas\ for\ Powerline:h20
 "set guifont=Powerline_Consolas:h14:cANSI
 "set guifontwide=YaHei_Consolas_Hybrid:h22
 "set guifont=Consolas:h11
-let g:Powerline_symbols='unicode'
-let g:airline_powerline_fonts = 1
-let g:airline_left_sep = '⮀'
-"let g:airline_left_sep = ''
-let g:airline_left_alt_sep = '⮁'
-let g:airline_right_sep = '⮂'
-"let g:airline_right_sep = ''
-let g:airline_right_alt_sep = '⮃'
-let g:airline_branch_prefix = '⭠'
-let g:airline_readonly_symbol = '⭤'
-let g:airline_linecolumn_prefix = '⭡'
-"g:airline_section_y = 'BN: %{bufnr("%")}'
-let g:airline_theme='powerlineish'
-let g:airline#extensions#whitespace#enabled = 0
-"scriptencoding utf-8
-
+"let g:Powerline_symbols='unicode'
+"let g:airline_powerline_fonts = 0
+"let g:airline_left_sep = '⮀'
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = '⮁'
+"let g:airline_right_sep = '⮂'
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = '⮃'
+"let g:airline_branch_prefix = '⭠'
+"let g:airline_readonly_symbol = '⭤'
+"let g:airline_linecolumn_prefix = '⭡'
+"let g:airline_whitespace = 'Ξ'
+"let g:airline_section_y = 'BN: %{bufnr("%")}'
+"let g:airline_theme='powerlineish'
+"let g:airline#extensions#whitespace#enabled = 0
 "set guifont=Meslo\ LG\ M\ for\ Powerline:h9 " <~ set the font
 "set guifont=Powerline\ Consolas:h11 " <~ set the font
-"set encoding=utf-8                  " <~ set the encoding
-let g:airline_powerline_fonts=1     " <~ activate the font in airline
+"let g:airline_powerline_fonts=1     " <~ activate the font in airline
+
+set encoding=utf-8                  " <~ set the encoding
+scriptencoding utf-8
+
+""for lightline-vim""
+let g:lightline = {
+      \ 'component': {
+      \   'readonly': '%{&readonly?"x":""}',
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '|', 'right': '|' }
+      \ }
+
+let g:lightline.tab_component = {}
+let g:lightline.tab_component_function = {
+      \ 'filename': 'lightline#tab#filename',
+      \ 'modified': 'lightline#tab#modified',
+      \ 'readonly': 'lightline#tab#readonly',
+      \ 'tabnum': 'lightline#tab#tabnum' }
+
+
+""for YMC or neocomplete""
+""YCM""
+"let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_auto_trigger = 1
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_key_invoke_completion = '<C-Space>'
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_min_num_of_chars_for_completion = 1
+"let g:loaded_youcompleteme = 1
+"let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+""""
+
+""Neocomplete""
+
+
+
+""for indentline""
+let g:indentLine_char = '┆'
+let g:indentLine_concealcursor = 'inc'
+let g:indentLine_conceallevel = 2
+let g:indentLine_setConceal = 1
+let g:indentLine_conceallevel = 1
+"set list lcs=tab:\|\  
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -74,14 +106,13 @@ set nu
 set incsearch
 set history=100
 filetype on
-"filetype plugin indent on   " Automatically detect file types.
-set mouse=a					" Automatically enable mouse usage
-set mousehide				" Hide the mouse cursor while typing
+"filetype plugin indent on		" Automatically detect file types.
+set mouse=a						" Automatically enable mouse usage
+set mousehide					" Hide the mouse cursor while typing
 set tabpagemax=15               " Only show 15 tabs
 set showmode                    " Display the current mode
 
 set cursorline                  " Highlight current line
-
 highlight clear SignColumn      " SignColumn should match background
 highlight clear LineNr          " Current line number row will have same background color in relative mode
 highlight clear CursorLineNr    " Remove highlight color from current line number
@@ -107,8 +138,6 @@ set foldenable                  " Auto fold code"
 syn match cCustomFunc /\w\+\s*(/me=e-1,he=e-1
 hi def link cCustomFunc Function
 
-colorscheme monokai
-
 map <F8> :tabn <CR>
 map <F7> :tabp <CR>
 map ZZ :wq <CR>
@@ -118,3 +147,7 @@ map ZZ :wq <CR>
 :command Q q
 
 "highlight Comment cterm=italic
+
+colorscheme monokai
+"set fillchars+=vert:│
+

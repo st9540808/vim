@@ -6,6 +6,4 @@
 --pad-oper 
 --pad-header 
 --suffix=none 
---align-pointer=name 
---align-reference=name 
 --remove-brackets

@@ -28,7 +28,10 @@ cd ~/Desktop
 git clone https://github.com/st9540808/2016-Fall-Operating-Systems
 git clone https://github.com/st9540808/Ten-Major-Construction-Projects
 git clone https://github.com/st9540808/Data-Structures
+git clone https://github.com/st9540808/Programming-Practices
 
+
+#add astyle
 sudo apt-get install astyle
 cp .astylerc ~/
 
