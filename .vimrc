@@ -75,9 +75,14 @@ let g:lightline.tab_component_function = {
 ""for YMC or neocomplete""
 ""YCM""
 "let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_filetype_whiteList = {
+	\ '*.cpp' : 1,
+	\ '*.c' : 1,
+	\ '*.h' : 1,
+	\ }
 let g:ycm_auto_trigger = 1
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_key_invoke_completion = '<C-Space>'
+"let g:ycm_key_invoke_completion = '<ctrl-space>'
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_seed_identifiers_with_syntax = 1
@@ -135,8 +140,8 @@ set scrolljump=5                " Lines to scroll when cursor leaves screen
 set scrolloff=3                 " Minimum lines to keep above and below cursor
 set foldenable                  " Auto fold code"
 
-syn match cCustomFunc /\w\+\s*(/me=e-1,he=e-1
-hi def link cCustomFunc Function
+"syn match cCustomFunc /\w\+\s*(/me=e-1,he=e-1
+"hi def link cCustomFunc Function
 
 map <F8> :tabn <CR>
 map <F7> :tabp <CR>
@@ -149,5 +154,10 @@ map ZZ :wq <CR>
 "highlight Comment cterm=italic
 
 colorscheme monokai
+set noshowmode
+
 "set fillchars+=vert:│
+map <F10> :set list lcs=tab:\┆\ <CR> 
+map <F9> :set list lcs=tab:\ \ <CR>
+"map <F10> :set listchars=tab:\|\ <CR> 
 
