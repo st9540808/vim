@@ -9,7 +9,6 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
-Plugin 'Yggdroot/indentLine'
 Plugin 'Shougo/neocomplete'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
@@ -83,25 +82,18 @@ let g:ycm_filetype_whiteList = {
 let g:ycm_auto_trigger = 1
 let g:ycm_confirm_extra_conf = 0
 "let g:ycm_key_invoke_completion = '<ctrl-space>'
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
+"let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:ycm_autoclose_preview_window_after_completion = 1
+set completeopt-=preview
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_enable_diagnostic_signs = 0 
+let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_echo_current_diagnostic = 0
 "let g:loaded_youcompleteme = 1
 "let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 """"
-
-""Neocomplete""
-
-
-
-""for indentline""
-let g:indentLine_char = '┆'
-let g:indentLine_concealcursor = 'inc'
-let g:indentLine_conceallevel = 2
-let g:indentLine_setConceal = 1
-let g:indentLine_conceallevel = 1
-"set list lcs=tab:\|\  
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
