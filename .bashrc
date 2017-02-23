@@ -134,12 +134,21 @@ fi
 #export TERM=screen-256color
 
 #export PS1='\[\033[1;34m\]\d\[\033[00m\]\D{%I:%M %P} :/\W$'
-export PS1='\n\[\033[1;32m\]<\D{%A %m/%d} \D{%I:%M%P}>\[\033[1;34m\] \w\[\033[00m\]\n$ '
+#export PS1='\n\[\033[1;32m\]<\D{%A %m/%d} \D{%I:%M%P}>\[\033[1;34m\] \w\[\033[00m\]\n$ '
 #PS1='[\t] /\W\$'
 
 #set guifont=Consolas\ for\ Powerline:h20
 cd ~/Desktop/
 
 #export LANG=en_GB.UTF-8
-#export LC_ALL=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
+#function _update_ps1() {
+#    PS1="$(/home/x220/Desktop/misc/powerline-shell/powerline-shell.py --cwd-mode fancy  --cwd-max-depth 2 --mode flat $? 2> /dev/null)"
+#}
+#
+#if [ "$TERM" != "linux" ]; then
+#    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+#fi
+
+export PS1='\n\[\e[38;5;250m\]\[\e[48;5;238m\] \D{%A %m/%d} \D{%I:%M%P} \[\e[38;5;238m\]\[\e]0;\u@\h: \w\a\]\[\e[48;5;31m\]\[\e[38;5;15m\]\[\e[48;5;31m\] \W \[\033[00m\]\n\[\e[48;5;236m\]\[\e[38;5;237m\]\[\e[38;5;15m\] \$\[\e[0m\]\[\e[38;5;236m\]\[\e[0m\] '
