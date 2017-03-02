@@ -9,9 +9,11 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
-Plugin 'Shougo/neocomplete'
-Plugin 'Shougo/neosnippet'
-Plugin 'Shougo/neosnippet-snippets'
+Plugin 'scrooloose/nerdtree'
+Bundle 'edkolev/tmuxline.vim'
+"Plugin 'Shougo/neocomplete'
+"Plugin 'Shougo/neosnippet'
+"Plugin 'Shougo/neosnippet-snippets'
 "Plugin 'vim-airline/vim-airline'
 "Plugin 'vim-airline/vim-airline-themes'
 
@@ -56,8 +58,10 @@ scriptencoding utf-8
 
 ""for lightline-vim""
 let g:lightline = {
+      \ 'colorscheme': 'default',
       \ 'component': {
-      \   'readonly': '%{&readonly?"x":""}',
+      \ 'lineinfo': "%{line('.') . '/' . line('$')}",  
+      \ 'readonly': '%{&readonly?"x":""}',
       \ },
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '|', 'right': '|' }
@@ -71,7 +75,18 @@ let g:lightline.tab_component_function = {
       \ 'tabnum': 'lightline#tab#tabnum' }
 
 
-""for YMC or neocomplete""
+""tmux line""
+let g:tmuxline_powerline_separators = 0
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'b'    : '#W',
+      \'c'    : '#H',
+      \'win'  : '#I #W',
+      \'cwin' : '#I #W',
+      \'y'    : '%a',
+      \'z'    : '#W %R'}
+
+""for YMC or neocmplete""
 ""YCM""
 "let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_filetype_whiteList = {
@@ -93,7 +108,6 @@ let g:ycm_enable_diagnostic_highlighting = 0
 let g:ycm_echo_current_diagnostic = 0
 "let g:loaded_youcompleteme = 1
 "let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-""""
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -152,4 +166,3 @@ set noshowmode
 map <F10> :set list lcs=tab:\┆\ <CR> 
 map <F9> :set list lcs=tab:\ \ <CR>
 "map <F10> :set listchars=tab:\|\ <CR> 
-
