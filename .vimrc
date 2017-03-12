@@ -109,6 +109,19 @@ let g:ycm_echo_current_diagnostic = 0
 "let g:loaded_youcompleteme = 1
 "let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
+""auto pair""
+execute "set <M-e>=\ee"
+nnoremap <M-e> e
+execute "set <M-p>=\ep"
+nnoremap <M-p> p
+execute "set <M-n>=\en"
+nnoremap <M-n> n
+execute "set <M-b>=\eb"
+nnoremap <M-b> b
+"let g:AutoPairsShortcutFastwrap='<C-A>'
+"let g:AutoPairsShortcutFastWrap='<M-q>'
+" fix meta-keys which generate <Esc>a .. <Esc>z
+
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif

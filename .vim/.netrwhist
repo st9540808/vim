@@ -1,4 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/home/x220/.vim/bundle/indentLine'
-let g:netrw_dirhist_2='/home/x220/Desktop/vim'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/usr/lib/gcc/x86_64-linux-gnu'
+let g:netrw_dirhist_2='/usr/lib/gcc/x86_64-linux-gnu/6'
+let g:netrw_dirhist_3='/usr/lib/gcc/x86_64-linux-gnu'
+let g:netrw_dirhist_4='/usr/lib/gcc/x86_64-linux-gnu/5/include'
+let g:netrw_dirhist_5='/home/x220/Desktop/Data-Structures/Ch4 Linked Lists/src'
+let g:netrw_dirhist_6='/home/x220/Desktop/Data-Structures/Ch4 Linked Lists'
+let g:netrw_dirhist_7='/home/x220/Desktop/Data-Structures/Ch4 Linked Lists/include'
+let g:netrw_dirhist_8='/home/x220/Desktop/Data-Structures/Trees'
+let g:netrw_dirhist_9='/home/x220/Desktop/Data-Structures/Priority Queues'
