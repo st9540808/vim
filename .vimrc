@@ -10,7 +10,10 @@ Plugin 'haya14busa/incsearch.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'scrooloose/nerdtree'
-Bundle 'edkolev/tmuxline.vim'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 "Plugin 'Shougo/neocomplete'
 "Plugin 'Shougo/neosnippet'
 "Plugin 'Shougo/neosnippet-snippets'
@@ -95,7 +98,19 @@ let g:ycm_filetype_whiteList = {
 	\ '*.h' : 1,
 	\ }
 let g:ycm_auto_trigger = 1
+let g:ycm_semantic_triggers =  {
+  \   'c' : [],
+  \   'ocaml' : ['.', '#'],
+  \   'cpp,objcpp' : ['::'],
+  \   'perl' : ['->'],
+  \   'php' : ['->', '::'],
+  \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
+  \   'ruby' : ['.', '::'],
+  \   'lua' : ['.', ':'],
+  \   'erlang' : [':'],
+  \ }
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_semantic_completion_toggle = '<c-f>'
 "let g:ycm_key_invoke_completion = '<ctrl-space>'
 "let g:ycm_autoclose_preview_window_after_insertion = 1
 "let g:ycm_autoclose_preview_window_after_completion = 1
@@ -172,10 +187,10 @@ map ZZ :wq <CR>
 
 "highlight Comment cterm=italic
 
-colorscheme monokai
-set noshowmode
-
 "set fillchars+=vert:│
 map <F10> :set list lcs=tab:\┆\ <CR> 
 map <F9> :set list lcs=tab:\ \ <CR>
 "map <F10> :set listchars=tab:\|\ <CR> 
+
+colorscheme monokai
+set noshowmode
